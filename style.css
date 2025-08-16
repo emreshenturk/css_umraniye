@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 30px;
+    font-family: sans-serif;
+}
+
+.main-cont {
+    background-image: linear-gradient(to right bottom, rgb(177, 177, 177, 0.5), rgb(90, 90, 90, 0.5));
+    height: 90vh;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.title {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(117, 117, 117);
+    text-align: center;
+    animation: img-come 1.5s ease-in;
+    font-size: 15px;
+}
+
+.img-cont {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 60%;
+    border: 3px solid black;
+    animation: img-come 2s ease-in;
+}
+
+.btn-cont {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100px;
+    background-color: rgb(138, 138, 138);
+    color: white;
+    box-shadow: 0 10px 15px rgb(82, 82, 82);
+    animation: btn-come 1.5s;
+}
+
+.btn::after{
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background-color: rgb(138, 138, 138);
+}
+
+.btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 8px 12px rgb(82, 82, 82);
+}
+
+.btn:hover::after {
+    animation: btn-hover 0.5s;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 6px 10px rgb(82, 82, 82);
+}
+
+.img-of {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes btn-hover {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes btn-come {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes img-come {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
